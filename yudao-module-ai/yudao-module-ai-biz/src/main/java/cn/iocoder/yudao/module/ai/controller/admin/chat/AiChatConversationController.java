@@ -15,8 +15,8 @@ import cn.iocoder.yudao.module.ai.service.chat.AiChatMessageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.annotation.Resource;
-import jakarta.validation.Valid;
+import javax.annotation.Resource;
+import javax.validation.Valid;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -41,7 +41,8 @@ public class AiChatConversationController {
 
     @PostMapping("/create-my")
     @Operation(summary = "创建【我的】聊天对话")
-    public CommonResult<Long> createChatConversationMy(@RequestBody @Valid AiChatConversationCreateMyReqVO createReqVO) {
+    public CommonResult<Long> createChatConversationMy(@RequestBody @Valid AiChatConversationCreateMyReqVO createReqVO0) {
+        String s = "sss";
         return success(chatConversationService.createChatConversationMy(createReqVO, getLoginUserId()));
     }
 
